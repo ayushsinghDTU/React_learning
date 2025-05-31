@@ -11,8 +11,19 @@ function App() {
                              //  we see( inspect web console ) onclick value upadate but not show in UI here come react main use 
                             // react provide HOOKS via which we can update UI in multiple position 
    
-    if(counter<20){ counter = counter + 1   
-     setcounter(counter) }
+    if(counter<20){ 
+     
+      // setcounter(counter + 1)     // interview question multiple setcounter now what will be the value on click?
+      // setcounter(counter + 1)    //  as we know in react it send in bundle and these update are same so send only once; 
+      // setcounter(counter + 1)   // answer is : i/p : 15  ->  o/p : 16
+      // setcounter(counter + 1)   
+     // if we want update in  this way then what we do is counter is like a function if we say add 1 in prevcointer the it work
+     setcounter(prevcounter => prevcounter + 1 )
+     setcounter(prevcounter => prevcounter + 1 )
+     setcounter(prevcounter => prevcounter + 1 )
+     setcounter(prevcounter => prevcounter + 1 )
+      
+    }
     //  console.log("clicked", counter); 
   }
   const removevalue =() => {
